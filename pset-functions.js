@@ -27,15 +27,46 @@ Use the following test cases to confirm your program meets the success criteria
    Result: 21
 
 ************/
-console.log('Problem 1:')
+console.log("Problem 1:");
 
 // Add your code below this line
+
+let playerCardScore;
+let dealerCardScore;
+
+function blackJack(playerCardScore, dealerCardScore) {
+	// eliminates card over 21, returns remaining if under 21
+	if (playerCardScore > 21 && dealerCardScore <= 21) {
+		return "Result: " + dealerCardScore;
+	} else if (playerCardScore <= 21 && dealerCardScore > 21) {
+		return "Result: " + playerCardScore;
+
+		// 	if both are over 21 returns 0
+	} else if (playerCardScore > 21 && dealerCardScore > 21) {
+		return "Result: 0";
+	}
+
+	// returns closer card if both under 21
+	else if (21 - playerCardScore <= 21 - dealerCardScore) {
+		return "Result: " + playerCardScore;
+	} else if (21 - playerCardScore >= 21 - dealerCardScore) {
+		return "Result: " + dealerCardScore;
+
+		// returns value if same
+	} else if (playerCardScore === dealerCardScore) {
+		return "Result: " + playerCardScore;
+	} else {
+		return "Result: 0";
+	}
+}
+
+console.log(blackJack(21, 21));
 
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
-console.log('-----------------')
+console.log("");
+console.log("-----------------");
 
 /***********
 Problem: Scrabble Scorer
@@ -72,15 +103,74 @@ Use the following test cases to confirm your program meets the success criteria
    Expected Result: 13
 
 ************/
-console.log('Problem 2:')
+console.log("Problem 2:");
 
 // Add your code below this line
+
+let word;
+
+function scrabbleScore(word) {
+	let wordArr = word.split("");
+	console.log(wordArr);
+	let totalScore = 0;
+
+	for (let i = 0; i < wordArr.length; i++) {
+		switch (wordArr[i].toUpperCase()) {
+			case "A":
+			case "E":
+			case "I":
+			case "O":
+			case "U":
+			case "L":
+			case "N":
+			case "R":
+			case "S":
+			case "T":
+				totalScore += 1;
+				break;
+			case "D":
+			case "G":
+				totalScore += 2;
+				break;
+			case "B":
+			case "C":
+			case "M":
+			case "P":
+				totalScore += 3;
+				break;
+			case "F":
+			case "H":
+			case "V":
+			case "W":
+			case "Y":
+				totalScore += 4;
+				break;
+			case "K":
+				totalScore += 5;
+				break;
+			case "J":
+			case "X":
+				totalScore += 8;
+				break;
+			case "Q":
+			case "Z":
+				totalScore += 10;
+				break;
+			default:
+				break;
+		}
+		console.log(wordArr[i], totalScore);
+	}
+	return totalScore;
+}
+
+console.log(scrabbleScore("javascript"));
 
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
-console.log('-----------------')
+console.log("");
+console.log("-----------------");
 
 /***********
 Problem: Palindromes
@@ -111,15 +201,15 @@ Use the following test cases to confirm your program meets the success criteria
    Expected Result: false
 
 ************/
-console.log('Problem 3:')
+console.log("Problem 3:");
 
 // Add your code below this line
 
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
-console.log('-----------------')
+console.log("");
+console.log("-----------------");
 
 /***********
 Problem: Double Letter Checker
@@ -144,15 +234,15 @@ Use the following test cases to confirm your program meets the success criteria
    Expected Result: true
 
 ************/
-console.log('Problem 4:')
+console.log("Problem 4:");
 
 // Add your code below this line
 
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
-console.log('-----------------')
+console.log("");
+console.log("-----------------");
 
 /***********
 Problem: Word Counter
@@ -204,12 +294,12 @@ Use the following test cases to confirm your program meets the success criteria
    had: 1
    wall: 1
 ************/
-console.log('Problem 5 - bonus:')
+console.log("Problem 5 - bonus:");
 
 // Add your code below this line
 
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
-console.log('-----------------')
+console.log("");
+console.log("-----------------");
