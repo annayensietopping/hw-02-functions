@@ -35,29 +35,29 @@ let playerCardScore;
 let dealerCardScore;
 
 function blackJack(playerCardScore, dealerCardScore) {
-	// eliminates card over 21, returns remaining if under 21
-	if (playerCardScore > 21 && dealerCardScore <= 21) {
-		return "Result: " + dealerCardScore;
-	} else if (playerCardScore <= 21 && dealerCardScore > 21) {
-		return "Result: " + playerCardScore;
+  // eliminates card over 21, returns remaining if under 21
+  if (playerCardScore > 21 && dealerCardScore <= 21) {
+    return "Result: " + dealerCardScore;
+  } else if (playerCardScore <= 21 && dealerCardScore > 21) {
+    return "Result: " + playerCardScore;
 
-		// 	if both are over 21 returns 0
-	} else if (playerCardScore > 21 && dealerCardScore > 21) {
-		return "Result: 0";
-	}
+    // 	if both are over 21 returns 0
+  } else if (playerCardScore > 21 && dealerCardScore > 21) {
+    return "Result: 0";
+  }
 
-	// returns closer card if both under 21
-	else if (21 - playerCardScore <= 21 - dealerCardScore) {
-		return "Result: " + playerCardScore;
-	} else if (21 - playerCardScore >= 21 - dealerCardScore) {
-		return "Result: " + dealerCardScore;
+  // returns closer card if both under 21
+  else if (21 - playerCardScore <= 21 - dealerCardScore) {
+    return "Result: " + playerCardScore;
+  } else if (21 - playerCardScore >= 21 - dealerCardScore) {
+    return "Result: " + dealerCardScore;
 
-		// returns value if same
-	} else if (playerCardScore === dealerCardScore) {
-		return "Result: " + playerCardScore;
-	} else {
-		return "Result: 0";
-	}
+    // returns value if same
+  } else if (playerCardScore === dealerCardScore) {
+    return "Result: " + playerCardScore;
+  } else {
+    return "Result: 0";
+  }
 }
 
 console.log(blackJack(21, 21));
@@ -107,64 +107,62 @@ console.log("Problem 2:");
 
 // Add your code below this line
 
-let word;
-
-function scrabbleScore(word) {
-	let wordArr = word.split("");
-	console.log(wordArr);
-	let totalScore = 0;
-
-	for (let i = 0; i < wordArr.length; i++) {
-		switch (wordArr[i].toUpperCase()) {
-			case "A":
-			case "E":
-			case "I":
-			case "O":
-			case "U":
-			case "L":
-			case "N":
-			case "R":
-			case "S":
-			case "T":
-				totalScore += 1;
-				break;
-			case "D":
-			case "G":
-				totalScore += 2;
-				break;
-			case "B":
-			case "C":
-			case "M":
-			case "P":
-				totalScore += 3;
-				break;
-			case "F":
-			case "H":
-			case "V":
-			case "W":
-			case "Y":
-				totalScore += 4;
-				break;
-			case "K":
-				totalScore += 5;
-				break;
-			case "J":
-			case "X":
-				totalScore += 8;
-				break;
-			case "Q":
-			case "Z":
-				totalScore += 10;
-				break;
-			default:
-				break;
-		}
-		console.log(wordArr[i], totalScore);
-	}
-	return totalScore;
-}
-
-console.log(scrabbleScore("javascript"));
+// function scrabbleScore(word) {
+// 	let wordArr = word.split("");
+// 	console.log(wordArr);
+// 	let totalScore = 0;
+//
+// 	for (let i = 0; i < wordArr.length; i++) {
+// 		switch (wordArr[i].toUpperCase()) {
+// 			case "A":
+// 			case "E":
+// 			case "I":
+// 			case "O":
+// 			case "U":
+// 			case "L":
+// 			case "N":
+// 			case "R":
+// 			case "S":
+// 			case "T":
+// 				totalScore += 1;
+// 				break;
+// 			case "D":
+// 			case "G":
+// 				totalScore += 2;
+// 				break;
+// 			case "B":
+// 			case "C":
+// 			case "M":
+// 			case "P":
+// 				totalScore += 3;
+// 				break;
+// 			case "F":
+// 			case "H":
+// 			case "V":
+// 			case "W":
+// 			case "Y":
+// 				totalScore += 4;
+// 				break;
+// 			case "K":
+// 				totalScore += 5;
+// 				break;
+// 			case "J":
+// 			case "X":
+// 				totalScore += 8;
+// 				break;
+// 			case "Q":
+// 			case "Z":
+// 				totalScore += 10;
+// 				break;
+// 			default:
+// 				break;
+// 		}
+// 		console.log(wordArr[i], totalScore);
+// 	}
+// 	return totalScore;
+// }
+//
+// console.log(scrabbleScore("javascript"));
 
 // Add your code above this line
 
@@ -205,6 +203,25 @@ console.log("Problem 3:");
 
 // Add your code below this line
 
+function isPalindrome(word) {
+  wordArr = word.split("");
+
+  wordArr.reverse();
+
+  let reverseWord = wordArr.join("");
+
+  console.log(word);
+  console.log(reverseWord);
+
+  if (word === reverseWord) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(isPalindrome("run"));
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -237,6 +254,19 @@ Use the following test cases to confirm your program meets the success criteria
 console.log("Problem 4:");
 
 // Add your code below this line
+
+function hasDoubleLetter(word) {
+  const letters = word.split("")
+  console.log(letters)
+  for( let i = 0; i < letters.length; i++){
+    if(letters[i] === letters[i + 1]){
+      return "Expected Result: " + true
+    }
+  }
+return "Expected Results: " + false
+}
+
+console.log(hasDoubleLetter("apple"))
 
 // Add your code above this line
 
@@ -297,6 +327,12 @@ Use the following test cases to confirm your program meets the success criteria
 console.log("Problem 5 - bonus:");
 
 // Add your code below this line
+
+let phrase = "Humpty Dumpty sat on a wall Humpty Dumpty had a great fall"
+
+function wordCount(phrase) {
+
+}
 
 // Add your code above this line
 
