@@ -256,17 +256,17 @@ console.log("Problem 4:");
 // Add your code below this line
 
 function hasDoubleLetter(word) {
-  const letters = word.split("")
-  console.log(letters)
-  for( let i = 0; i < letters.length; i++){
-    if(letters[i] === letters[i + 1]){
-      return "Expected Result: " + true
+  const letters = word.split("");
+  console.log(letters);
+  for (let i = 0; i < letters.length; i++) {
+    if (letters[i] === letters[i + 1]) {
+      return "Expected Result: " + true;
     }
   }
-return "Expected Results: " + false
+  return "Expected Results: " + false;
 }
 
-console.log(hasDoubleLetter("apple"))
+console.log(hasDoubleLetter("apple"));
 
 // Add your code above this line
 
@@ -328,11 +328,39 @@ console.log("Problem 5 - bonus:");
 
 // Add your code below this line
 
-let phrase = "Humpty Dumpty sat on a wall Humpty Dumpty had a great fall"
+let phrase = "Humpty Dumpty sat on a wall Humpty Dumpty had a great fall";
+
+// loop to examine each word in phrase, perhaps make an array?
+// save first word - 1
+// if already exists, add 1
 
 function wordCount(phrase) {
+  const words = phrase.split(" ");
 
+  const counts = {};
+  words.forEach(word => {
+    if (counts[word] !== undefined) {
+      counts[word] = 0;
+    }
+
+    counts[word]++;
+  });
+
+  Object.keys(counts).forEach(word => {
+    console.log(`${word}: ${counts[word]}`);
+  });
 }
+
+let words = phrase.split(" ");
+console.log(words);
+
+words.forEach(element => {
+  if ((element = "undefined")) {
+    return `${element}: 1`;
+  } else {
+    return `${element}: `
+  }
+});
 
 // Add your code above this line
 
